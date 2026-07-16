@@ -8,6 +8,8 @@ This is an academic project that aims to explore and analyze the well data provi
 
 ### 1. Download well data
 
+If you already have the well data downloaded, you can skip this step.
+
 > The scripts are written for Windows, but they can be easily adapted to other operating systems. To execute these steps you will need to have 7-Zip installed on your machine. You can download it from [here](https://www.7-zip.org/download.html).
 
 1. Go to [Volve Data Village](https://marketplace.databricks.com/details/5c3558ef-315c-44dd-baef-7062ac301f22/Equinor-ASA_Volve-Data-Village) on Databricks Marketplace and click "Get Data" to download the well data. You will need to create a Databricks account if you don't have one already.
