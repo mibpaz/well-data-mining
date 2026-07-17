@@ -14,7 +14,7 @@ If you already have the well data downloaded, you can skip this step.
 
 1. Go to [Volve Data Village](https://marketplace.databricks.com/details/5c3558ef-315c-44dd-baef-7062ac301f22/Equinor-ASA_Volve-Data-Village) on Databricks Marketplace and click "Get Data" to download the well data. You will need to create a Databricks account if you don't have one already.
 2. Go to `volve\Well_logs\01.MUD_LOG` and batch download the folders. Each folder is a well, and the folders will be downloaded as zip files with a `.zip` suffix.
-3. Go to `volve\Well_logs\01.LWD_EWL` and batch download the folders. The folders will be downloaded as zip files with a `(1).zip` suffix (it is important to leave the number suffix, as the following scripts will use this to merge the data).
+3. Go to `volve\Well_logs\01.MWD_EWL` and batch download the folders. The folders will be downloaded as zip files with a `(1).zip` suffix (it is important to leave the number suffix, as the following scripts will use this to merge the data).
 4. Move all the downloaded folders and zip files to a directory.
 5. Copy the script `scripts/extract.bat` to that directory.
 6. Run the `extract` script to unzip the directories. For each well, both folders will be merged into a single folder with the contents of both folders.

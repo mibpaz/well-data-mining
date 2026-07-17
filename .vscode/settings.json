@@ -1,0 +1,20 @@
+{
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.db": "sqlite-viewer.view",
+    "*.parquet": "duckdb.dataFileViewer",
+    "*.csv": "duckdb.dataFileViewer",
+    "*.tsv": "duckdb.dataFileViewer",
+    "*.xlsx": "duckdb.dataFileViewer",
+    "*.duckdb": "duckdb.tableViewer"
+  },
+  "duckdb.databases": [
+    {
+      "alias": "volve",
+      "type": "file",
+      "path": "c:\\Users\\ASHL\\Documents\\Volve\\db\\volve.duckdb",
+      "attached": true
+    }
+  ],
+  "duckdb.defaultDatabase": "volve"
+}

@@ -1,23 +1,24 @@
-import sqlite3
+from pathlib import Path
+import duckdb
 
-# Define your file paths
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "volve.duckdb"
+MIGRATION_PATH = BASE_DIR / "migration.sql"
+
+# --- Migration Script Executer ---
 sql_file_path = "db/migration.sql"
-database_path = "db/volve.db"
+database_path = str(DB_PATH)
 
 try:
     with open(sql_file_path, "r", encoding="utf-8") as file:
         sql_script = file.read()
 
-    with sqlite3.connect(database_path) as conn:
-        cursor = conn.cursor()
-
-        cursor.executescript(sql_script)
-
-        conn.commit()
+    with duckdb.connect(database_path) as conn:
+        conn.execute(sql_script)
 
     print(f"Database '{database_path}' created successfully from '{sql_file_path}'.")
 
-except sqlite3.Error as e:
-    print(f"An SQLite error occurred: {e}")
+except duckdb.Error as e:
+    print(f"A DuckDB error occurred: {e}")
 except FileNotFoundError:
     print(f"Error: The file '{sql_file_path}' was not found.")
