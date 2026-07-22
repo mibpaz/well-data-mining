@@ -43,11 +43,22 @@ def update(table, record_id, data: dict):
     cur.execute(query, list(data.values()) + [record_id])
 
 
-def find(table, channel_name, unit):
-    query = f"SELECT id FROM {table} WHERE name = ? AND unit = ?"
-    cur.execute(query, [channel_name, unit])
-    result = cur.fetchone()
-    return result[0] if result else None
+def query(query, params=None):
+    if params is None:
+        params = []
+    cur.execute(query, params)
+    return cur.fetchall()
+
+
+def select(table, columns="*", condition_column=None, condition_value=None):
+    if condition_column and condition_value is not None:
+        query += f"SELECT {columns} FROM {table} WHERE {condition_column} = ?"
+        cur.execute(query, [condition_value])
+    else:
+        query = f"SELECT {columns} FROM {table}"
+        cur.execute(query)
+
+    return cur.fetchall()
 
 
 def find_or_create(table, data):
@@ -68,12 +79,18 @@ def close():
     con.close()
 
 
+def ui():
+    return con.execute("CALL start_ui();")
+
+
 db = {
     "find_or_create": find_or_create,
-    "find": find,
+    "select": select,
     "update": update,
     "create": create,
     "remove": remove,
+    "query": query,
     "bulk_insert_readings": bulk_insert_readings,
     "close": close,
+    "ui": ui,
 }

@@ -13,7 +13,7 @@
       "alias": "volve",
       "type": "file",
       "path": "c:\\Users\\ASHL\\Documents\\Volve\\db\\volve.duckdb",
-      "attached": true
+      "attached": false
     }
   ],
   "duckdb.defaultDatabase": "volve"

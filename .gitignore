@@ -11,5 +11,5 @@ wheels/
 
 # Well Data
 wells/
-.duckdb
-.db
+*.duckdb
+*.db
