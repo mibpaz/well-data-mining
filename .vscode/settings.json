@@ -6,7 +6,7 @@
     "*.csv": "duckdb.dataFileViewer",
     "*.tsv": "duckdb.dataFileViewer",
     "*.xlsx": "duckdb.dataFileViewer",
-    "*.duckdb": "duckdb.tableViewer"
+    "*.duckdb": "default"
   },
   "duckdb.databases": [
     {
@@ -16,5 +16,14 @@
       "attached": false
     }
   ],
-  "duckdb.defaultDatabase": "volve"
+  "duckdb.defaultDatabase": "volve",
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "DuckDB",
+      "name": "teste",
+      "database": "\"C:\\Users\\HENRY\\Desktop\\well-data-mining\\db\\volve.duckdb\""
+    }
+  ],
+  "sqltools.useNodeRuntime": true
 }
