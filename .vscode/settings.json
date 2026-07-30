@@ -12,8 +12,8 @@
     {
       "alias": "volve",
       "type": "file",
-      "path": "c:\\Users\\ASHL\\Documents\\Volve\\db\\volve.duckdb",
-      "attached": false
+      "path": "c:\\Users\\HENRY\\Desktop\\well-data-mining\\db\\volve.duckdb",
+      "attached": true
     }
   ],
   "duckdb.defaultDatabase": "volve",

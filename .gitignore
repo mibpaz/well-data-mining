@@ -10,6 +10,7 @@ wheels/
 .venv
 
 # Well Data
+lwd/
 wells/
 *.duckdb
 *.db
